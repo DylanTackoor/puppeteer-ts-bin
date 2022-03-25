@@ -8,7 +8,7 @@ import { scriptA } from './scripts/scriptA'
   const executablePath = await getExecutablePath()
 
   const browser = await puppeteer.launch({
-    executablePath: chromiumExecutablePath,
+    executablePath,
     headless: false,
   })
 
