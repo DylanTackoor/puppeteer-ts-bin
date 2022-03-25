@@ -1,3 +1,5 @@
+// pkg+puppeteer glue from https://github.com/rocklau/pkg-puppeteer
+
 import path from 'path'
 import puppeteer from 'puppeteer'
 
