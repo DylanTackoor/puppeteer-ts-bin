@@ -1,4 +1,5 @@
-// pkg+puppeteer glue from https://github.com/rocklau/pkg-puppeteer
+// pkg+puppeteer glue adapter from https://github.com/rocklau/pkg-puppeteer
+// TODO: replace with chromePath.option.ts
 
 import path from 'path'
 import puppeteer from 'puppeteer'
