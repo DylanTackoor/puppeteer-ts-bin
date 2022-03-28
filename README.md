@@ -4,10 +4,8 @@ Sample puppeteer script with a build script that packages into a binary+chromium
 
 ## Usage
 
-1. Add sample scripts
-2. `npm run build`
-3. `./build/puppeter-bin-macos start`
-
+1. `npm run build`
+2. `./build/puppeter-bin-macos start`
 
 ## Help
 
