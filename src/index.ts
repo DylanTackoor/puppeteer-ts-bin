@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer'
 
 import { argv } from './cli'
+import { HEADLESS_OPTION_NAME } from './cli/options/headless.option'
 import { getExecutablePath } from './pkg'
 import { scriptA } from './scripts/scriptA'
 
@@ -11,7 +12,7 @@ const main = async () => {
 
   const browser = await puppeteer.launch({
     executablePath: getExecutablePath(),
-    headless: false,
+    headless: argv[HEADLESS_OPTION_NAME],
   })
 
   await scriptA(browser)
