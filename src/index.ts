@@ -10,6 +10,8 @@ const main = async () => {
     return console.log("That's all, folks!")
   }
 
+  console.log('Launching Puppeteer...')
+
   const browser = await puppeteer.launch({
     executablePath: getExecutablePath(),
     headless: argv[HEADLESS_OPTION_NAME],
