@@ -12,7 +12,7 @@ const startCommand: CommandModule = {
       alias: 's',
       description: 'Start the application',
       boolean: true,
-      default: false,
+      default: true,
     })
   },
 }
@@ -21,4 +21,5 @@ export const cli: AppConfig = yargs(hideBin(process.argv))
   .command(startCommand)
   .alias('v', 'version')
   .version()
+  .alias('h', 'help')
   .parseSync()
