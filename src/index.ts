@@ -1,17 +1,17 @@
 import puppeteer from 'puppeteer'
 
 import { argv } from './cli'
-import { HEADLESS_OPTION_NAME } from './cli/options/headless.option'
-import { getExecutablePath } from './pkg'
 import { scriptA } from './scripts/scriptA'
+import { CHROME_PATH_OPTION_NAME } from './cli/options/chromePath.option'
+import { HEADLESS_OPTION_NAME } from './cli/options/headless.option'
 
-const main = async () => {
+const main = async () => { 
   if (!argv._.includes('start')) {
     return console.log("That's all, folks!")
   }
 
   const browser = await puppeteer.launch({
-    executablePath: getExecutablePath(),
+    executablePath: argv[CHROME_PATH_OPTION_NAME],
     headless: argv[HEADLESS_OPTION_NAME],
   })
 
