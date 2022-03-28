@@ -5,6 +5,7 @@
     "main": "dist/index.js"
   },
   "scripts": {
+    "start": "tsc && node dist/index.js",
     "build": "tsc && rm -rf build && pkg . --out-path build",
     "postbuild": "cp -R ./node_modules/puppeteer/.local-chromium build/chromium"
   },
@@ -14,7 +15,9 @@
     "puppeteer": "^13.5.1"
   },
   "devDependencies": {
+    "@types/yargs": "^17.0.10",
     "prettier": "^2.6.1",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "yargs": "^17.4.0"
   }
 }

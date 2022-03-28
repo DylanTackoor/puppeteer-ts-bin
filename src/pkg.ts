@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer'
 
 export const getExecutablePath = (): string => {
   // @ts-ignore
-  const isPkg = typeof process.pkg !== 'undefined'
+  const isPkg: boolean = typeof process.pkg !== 'undefined'
 
   //mac path replace
   let chromiumExecutablePath: string = isPkg
