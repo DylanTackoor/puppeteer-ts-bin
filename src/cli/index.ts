@@ -1,25 +1,12 @@
 import yargs, { CommandModule } from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
-import type { AppConfig } from './cli.d'
+import { AppConfig } from '../index.d'
+import { startCommand } from './start.command'
 
-const startCommand: CommandModule = {
-  command: 'start',
-  describe: 'Start the application',
-  handler: () => undefined,
-  builder: yargsInstance => {
-    return yargsInstance.options('start', {
-      alias: 's',
-      description: 'Start the application',
-      boolean: true,
-      default: true,
-    })
-  },
-}
-
-export const cli: AppConfig = yargs(hideBin(process.argv))
+export const argv = yargs(hideBin(process.argv))
   .command(startCommand)
-  .alias('v', 'version')
   .version()
+  .alias('v', 'version')
   .alias('h', 'help')
-  .parseSync()
+  .parseSync() as AppConfig

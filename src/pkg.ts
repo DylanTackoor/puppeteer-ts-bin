@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer'
 
 export const getExecutablePath = (): string => {
   // @ts-ignore
-  const isPkg: boolean = process.pkg !== 'undefined'
+  const isPkg: boolean = typeof process.pkg !== 'undefined'
   const isWin = process.platform === 'win32'
 
   const chromePath = path.join(path.dirname(process.execPath), 'chromium')
