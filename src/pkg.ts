@@ -5,35 +5,21 @@ import puppeteer from 'puppeteer'
 
 export const getExecutablePath = (): string => {
   // @ts-ignore
-  const isPkg: boolean = typeof process.pkg !== 'undefined'
+  const isPkg: boolean = process.pkg !== 'undefined'
+  const isWin = process.platform === 'win32'
 
-  //mac path replace
-  let chromiumExecutablePath: string = isPkg
+  const chromePath = path.join(path.dirname(process.execPath), 'chromium')
+  const replaceRegex = isWin
+    ? /^.*?\\node_modules\\puppeteer\\\.local-chromium/
+    : /^.*?\/node_modules\/puppeteer\/\.local-chromium/
+
+  const executablePath: string = isPkg
     ? puppeteer
         // @ts-ignore
         .executablePath()
-        .replace(
-          /^.*?\/node_modules\/puppeteer\/\.local-chromium/,
-          path.join(path.dirname(process.execPath), 'chromium'),
-        )
+        .replace(replaceRegex, chromePath)
     : // @ts-ignore
       puppeteer.executablePath()
 
-  console.log(process.platform)
-
-  //check win32
-  if (process.platform == 'win32') {
-    chromiumExecutablePath = isPkg
-      ? puppeteer
-          // @ts-ignore
-          .executablePath()
-          .replace(
-            /^.*?\\node_modules\\puppeteer\\\.local-chromium/,
-            path.join(path.dirname(process.execPath), 'chromium'),
-          )
-      : // @ts-ignore
-        puppeteer.executablePath()
-  }
-
-  return chromiumExecutablePath
+  return executablePath
 }
