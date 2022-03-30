@@ -12,7 +12,7 @@ Sample puppeteer script with a build script that packages into a binary+chromium
 ### Production
 
 1. `npm run build`
-2. `./build/puppeter-bin-macos start -u Username -p Password`
+2. `./build/puppeter-bin-macos start -u Username -p Password --url https://google.com`
 
 ## Help
 

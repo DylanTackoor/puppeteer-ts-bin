@@ -1,5 +1,15 @@
 import { ConfigOptionInterface } from '../../index.d'
 
+export const URL_OPTION_NAME = 'url'
+export const urlOption: ConfigOptionInterface = {
+  name: URL_OPTION_NAME,
+  config: {
+    description: 'Url to visit. Example: https://www.google.com',
+    string: true,
+    demandOption: true,
+  },
+}
+
 export const USERNAME_OPTION_NAME = 'username'
 export const usernameOption: ConfigOptionInterface = {
   name: USERNAME_OPTION_NAME,
@@ -33,6 +43,7 @@ export const databaseOption: ConfigOptionInterface = {
 }
 
 export interface AuthConfigInterface {
+  [URL_OPTION_NAME]: string
   [USERNAME_OPTION_NAME]: string
   [PASSWORD_OPTION_NAME]: string
   [DATABASE_OPTION_NAME]?: string
