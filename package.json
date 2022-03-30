@@ -1,5 +1,5 @@
 {
-  "name": "puppeter-ts-bin",
+  "name": "puppeteer-ts-bin",
   "version": "0.0.1",
   "bin": {
     "main": "dist/index.js"
@@ -9,6 +9,7 @@
     "build": "tsc && rm -rf build && pkg . --out-path build",
     "postbuild": "cp -R ./node_modules/puppeteer/.local-chromium build/chromium",
     "dockerBuild": "tsc && rm -rf build && pkg . --out-path build",
+    "dockerImageBuild": "docker build --pull --rm -f \"Dockerfile\" -t puppeteertsbin:latest \".\"",
     "types": "tsc --noEmit"
   },
   "dependencies": {

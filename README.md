@@ -1,4 +1,4 @@
-# puppeter binary test
+# puppeteer binary test
 
 Sample puppeteer script with a build script that packages into a binary+chromium folder.
 
@@ -12,17 +12,17 @@ Sample puppeteer script with a build script that packages into a binary+chromium
 ### Production
 
 1. `npm run build`
-2. `./build/puppeter-bin-macos start -u Username -p Password --url https://google.com`
+2. `./build/puppeteer-bin-macos start -u Username -p Password --url https://google.com`
 
 ## Help
 
 Run `--help` for available commands.
 
-`./build/puppeter-bin-macos --help`
+`./build/puppeteer-bin-macos --help`
 
 ```txt
-./build/puppeter-ts-bin-macos start --help
-puppeter-ts-bin-macos start
+./build/puppeteer-ts-bin-macos start --help
+puppeteer-ts-bin-macos start
 
 Start the application
 

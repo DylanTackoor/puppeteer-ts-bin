@@ -34,5 +34,6 @@ RUN npm ci
 RUN npm run dockerBuild
 
 FROM centos:7
-COPY --from=builder /app/build .
-CMD ["./build/puppeteer-ts-bin-linux", "--help"]
+WORKDIR /usr/local
+COPY --from=builder /app/build/ .
+CMD ["./puppeteer-ts-bin-linux", "--help"]
