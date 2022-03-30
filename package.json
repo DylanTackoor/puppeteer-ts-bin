@@ -8,6 +8,7 @@
     "start": "tsc && node dist/index.js start",
     "build": "tsc && rm -rf build && pkg . --out-path build",
     "postbuild": "cp -R ./node_modules/puppeteer/.local-chromium build/chromium",
+    "dockerBuild": "tsc && rm -rf build && pkg . --out-path build",
     "types": "tsc --noEmit"
   },
   "dependencies": {
