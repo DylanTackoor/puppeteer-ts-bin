@@ -1,9 +1,9 @@
 import path from 'path'
 import puppeteer from 'puppeteer'
 
-import { ConfigOptionInterface } from '../../index.d' 
+import { ConfigOptionInterface } from '../../index.d'
 
-/** adapter from https://github.com/rocklau/pkg-puppeteer */
+/** adapted from https://github.com/rocklau/pkg-puppeteer */
 const getExecutablePath = (): string => {
   // @ts-ignore
   const isPkg: boolean = typeof process.pkg !== 'undefined'
@@ -22,17 +22,20 @@ const getExecutablePath = (): string => {
     : // @ts-ignore
       puppeteer.executablePath()
 
-  return executablePath
-}
+  // Wow asking Copilot for relativie path was easir than StackOverflow Googling
+  const relativeExecutablePath = path.relative(process.cwd(), executablePath)
 
+  return relativeExecutablePath
+}
 
 export const CHROME_PATH_OPTION_NAME = 'chrome-path'
 export const chromePathOption: ConfigOptionInterface = {
   name: CHROME_PATH_OPTION_NAME,
   config: {
-    description: 'Path to folder containing Chrome executable',
+    alias: 'c',
+    description: 'Path to folder containing Chrome executable. Default calculated at runtime.',
     string: true,
-    default: getExecutablePath()
+    default: getExecutablePath(),
   },
 }
 
