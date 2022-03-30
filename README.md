@@ -1,4 +1,4 @@
-# puppeter binary test
+# puppeteer binary test
 
 Sample puppeteer CLI for distributing some browser automations.
 
