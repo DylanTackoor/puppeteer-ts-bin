@@ -1,13 +1,13 @@
 # puppeter binary test
 
-Sample puppeteer script with a build script that packages into a binary+chromium folder.
+Sample puppeteer CLI for distributing some browser automations.
 
 ## Usage
 
 ### Development
 
 1. `npm i`
-2. `npm start -- -u Username -p Password`
+2. `npm start -- -u Username -p Password --url https://google.com`
 
 ### Production
 
@@ -39,5 +39,5 @@ Options:
 ```
 
 ## TODOs
-
+- [ ] replace DIY dockerfile with https://hub.docker.com/r/alekzonder/puppeteer/
 - [ ] apply username/password from servers.json?
