@@ -4,7 +4,7 @@ export const URL_OPTION_NAME = 'url'
 export const urlOption: ConfigOptionInterface = {
   name: URL_OPTION_NAME,
   config: {
-    description: 'Url to visit. Example: https://www.google.com',
+    description: 'Url to visit. Ex: https://www.google.com',
     string: true,
     demandOption: true,
   },

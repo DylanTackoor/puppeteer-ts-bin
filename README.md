@@ -31,9 +31,10 @@ Options:
   -c, --chrome-path  Path to folder containing Chrome executable. Default
                      calculated at runtime.                   [string] [default:
     "build/chromium/mac-970485/chrome-mac/Chromium.app/Contents/MacOS/Chromium"]
-  -u, --username     Username to authenticate with                      [string]
-  -p, --password     Password to authenticate with                      [string]
+  -u, --username     Username to authenticate with           [string] [required]
+  -p, --password     Password to authenticate with           [string] [required]
   -d, --database     Database to authenticate with                      [string]
+      --url          Url to visit. Ex: https://www.google.com[string] [required]
   -v, --version      Show version number                               [boolean]
 ```
 
