@@ -5,7 +5,7 @@ import { scriptA } from './scripts/scriptA'
 import { CHROME_PATH_OPTION_NAME } from './cli/options/chromePath.option'
 import { HEADLESS_OPTION_NAME } from './cli/options/headless.option'
 
-const main = async () => { 
+const main = async () => {
   if (!argv._.includes('start')) {
     return console.log("That's all, folks!")
   }

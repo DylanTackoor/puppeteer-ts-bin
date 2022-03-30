@@ -1,7 +1,8 @@
 import { CommandModule } from 'yargs'
-import { chromePathOption } from './options/chromePath.option'
 
+import { chromePathOption } from './options/chromePath.option'
 import { headlessOption } from './options/headless.option'
+import { usernameOption, passwordOption, databaseOption } from './options/auth.option'
 
 export const startCommand: CommandModule = {
   command: 'start',
@@ -11,5 +12,8 @@ export const startCommand: CommandModule = {
     return yargsInstance
       .option(headlessOption.name, headlessOption.config)
       .option(chromePathOption.name, chromePathOption.config)
+      .option(usernameOption.name, usernameOption.config)
+      .option(passwordOption.name, passwordOption.config)
+      .option(databaseOption.name, databaseOption.config)
   },
 }

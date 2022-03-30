@@ -4,22 +4,39 @@ Sample puppeteer script with a build script that packages into a binary+chromium
 
 ## Usage
 
+### Development
+
+1. `npm i`
+2. `npm start -- -u Username -p Password`
+
+### Production
+
 1. `npm run build`
-2. `./build/puppeter-bin-macos start`
+2. `./build/puppeter-bin-macos start -u Username -p Password`
 
 ## Help
 
-Run `--help` for available commands. Currently not displaying the `--headless=false` or `--chrome-path` flags, but they're set to okay defaults for development.
+Run `--help` for available commands.
 
 `./build/puppeter-bin-macos --help`
 
 ```txt
-puppeter-ts-bin-macos [command]
+./build/puppeter-ts-bin-macos start --help
+puppeter-ts-bin-macos start
 
-Commands:
-  puppeter-ts-bin-macos start  Start the application
+Start the application
 
 Options:
-  -v, --version  Show version number                                   [boolean]
-  -h, --help     Show help
+  -h, --headless     Show help                        [boolean] [default: false]
+  -c, --chrome-path  Path to folder containing Chrome executable. Default
+                     calculated at runtime.                   [string] [default:
+    "build/chromium/mac-970485/chrome-mac/Chromium.app/Contents/MacOS/Chromium"]
+  -u, --username     Username to authenticate with                      [string]
+  -p, --password     Password to authenticate with                      [string]
+  -d, --database     Database to authenticate with                      [string]
+  -v, --version      Show version number                               [boolean]
 ```
+
+## TODOs
+
+- [ ] apply username/password from servers.json?
