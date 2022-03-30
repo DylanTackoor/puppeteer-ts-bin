@@ -35,5 +35,5 @@ export const databaseOption: ConfigOptionInterface = {
 export interface AuthConfigInterface {
   [USERNAME_OPTION_NAME]: string
   [PASSWORD_OPTION_NAME]: string
-  [DATABASE_OPTION_NAME]: string
+  [DATABASE_OPTION_NAME]?: string
 }
